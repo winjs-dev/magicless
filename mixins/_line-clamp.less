@@ -1,0 +1,33 @@
+//----------------------------------
+//
+//**
+// *
+// * @authors liwb(lwbhtml@163.com)
+// * @date    2017/7/3 12:47
+// * @version $
+// * @desc 文本多行文字截断
+// * @param {Number} @lines 行数
+// * @param {Number} @line-height 行高 当@lines=1的时候，@line-height默认传0，相当于截取的字节数
+// */
+//----------------------------------
+
+.line-clamp(@lines, @line-height: 1.4em) {
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  & when (@lines = 1) {
+    white-space: nowrap;
+    width: 100% - @line-height;
+  }
+
+  & when not (@lines = 1) {
+    .flexbox();
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: @lines;
+    line-clamp: @lines;
+    line-height: @line-height;
+    max-height: @line-height * @lines;
+  }
+
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@winner-fed/magicless",
+  "version": "1.1.9",
+  "description": "magicless is a collection of less mixins.",
+  "license": "MIT",
+  "keywords": [
+    "less",
+    "magicless"
+  ],
+  "scripts": {
+    "release": "sh ./release.sh"
+  },
+  "bugs": {
+    "url": "https://github.com/cloud-templates/magicless/issues"
+  },
+  "repository": [
+    {
+      "type": "git",
+      "url": "https://github.com/cloud-templates/magicless.git"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+//----------------------------------
+//
+//**
+// *
+// * @authors liwb (lwbhtml@163.com)
+// * @date    2019/7/26 22:08
+// * @version $
+// * @desc bem 写法
+// * @link https://wangfan.bj.cn/?p=1158
+// * 用法：
+//.block(product, {
+//  color: green;
+//
+//  .element(title, {
+//    color: black;
+//    .modifier(invalid, {
+//      font-size: 5px;
+//    });
+//  });
+//
+//  .modifier(invalid, {
+//    color: red;
+//  });
+//});
+
+// 生成的代码：
+//.product {
+//  color: green;
+//}
+//.product__title {
+//  color: black;
+//}
+//.product__title--invalid {
+//  font-size: 5px;
+//}
+//.product--invalid {
+//  color: red;
+//}
+// */
+//----------------------------------
+
+
+@elementSeparator: __;
+@modifierSeparator: --;
+
+.b(@blockName; @content) {
+  @{blockName} {
+    @content();
+  }
+}
+
+.e(@elementName; @content) {
+  &@{elementSeparator}@{elementName} {
+    @content();
+  }
+}
+
+.m(@modifierName; @content) {
+  &@{modifierSeparator}@{modifierName} {
+    @content();
+  }
+}

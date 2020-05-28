@@ -1,0 +1,17 @@
+//----------------------------------
+//
+//**
+// *
+// * @authors liwb(lwbhtml@163.com)
+// * @date    2017/7/3 13:46
+// * @version $
+// * @desc 透明度  摘自bootstrap
+// */
+//----------------------------------
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
