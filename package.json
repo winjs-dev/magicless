@@ -8,7 +8,7 @@
     "magicless"
   ],
   "scripts": {
-    "release": "sh ./release.sh"
+    "release": "np"
   },
   "bugs": {
     "url": "https://github.com/cloud-templates/magicless/issues"
@@ -18,5 +18,8 @@
       "type": "git",
       "url": "https://github.com/cloud-templates/magicless.git"
     }
-  ]
+  ],
+  "devDependencies": {
+    "np": "*"
+  }
 }
