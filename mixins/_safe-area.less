@@ -1,0 +1,30 @@
+//----------------------------------
+//
+//**
+// *
+// * @authors liwb (lwbhtml@163.com)
+// * @date    2021-03-24 09:27:19
+// * @version $
+// * @desc bem 写法
+// * @link https://www.jianshu.com/p/bc87d1e25702
+// * 用法：
+// 具体使用
+//.safe-area({
+//  height: 100px;
+//  padding-bottom: env(safe-area-bottom-height);
+//});
+//----------------------------------
+
+/**
+ *  适配 iPhoneX 及以后的刘海屏手机，可以自行编写 rules 规则
+ */
+.safe-area(@rules) {
+  /* iphone x / xs / 11 pro*/
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) { @rules(); }
+  /* iphone xr / 11  stackoverflow 提供判断 */
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) { @rules(); }
+  // 实际可用的 xr 判断
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2) { @rules(); }
+  /* iphone xs max / 11 pro max */
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) { @rules(); }
+}
